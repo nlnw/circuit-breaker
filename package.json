@@ -1,17 +1,20 @@
 {
-  "name": "hack",
   "type": "module",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "clean": "rm -rf docs/.observablehq/cache",
+    "build": "rm -rf dist && observable build",
+    "dev": "observable preview",
+    "deploy": "wrangler",
+    "observable": "observable"
   },
   "dependencies": {
-    "astro": "^4.3.2",
-    "@astrojs/check": "^0.4.1",
-    "typescript": "^5.3.3"
+    "@observablehq/framework": "latest",
+    "d3-dsv": "^3.0.1",
+    "d3-fetch": "^3.0.1",
+    "d3-time-format": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=20.6"
   }
 }
